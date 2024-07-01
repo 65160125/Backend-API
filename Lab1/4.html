@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON Parsing Example</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+  let text = '{"friends":[' +
+    '{"firstname":"Onauma","lastname":"Wanchongkham","city":"Saraburi","pet":[{"pet1":"Jee","pet2":"choyu"}]},' +
+    '{"firstname":"Natthiwut","lastname":"Nuambangkwan","city":"Chachaengsao","pet":[{"pet1":"meechoke","pet2":"dog"}]},' +
+    '{"firstname":"Weraphat","lastname":"Thampanya","city":"Chonburi","pet":[{"pet1":"Yujeen","pet2":"cat"}]}' +
+  ']}';
+
+  const obj = JSON.parse(text);
+
+  let output = "";
+  for(let i = 0; i < obj.friends.length; i++) {
+    output += "Name: "+obj.friends[i].firstname + " " + obj.friends[i].lastname + "<br>";
+    output += "City :" + obj.friends[i].city + "  Pet : "+ obj.friends[i].pet[0].pet1 +"  , "+obj.friends[i].pet[0].pet2 +"<br>"+"<br>" ;
+  }
+
+  document.getElementById("demo").innerHTML = output;
+</script>
+
+</body>
+</html>
