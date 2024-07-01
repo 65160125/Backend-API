@@ -1,0 +1,16 @@
+<p id="demo"></p>
+
+
+
+
+<script>
+let text= '{"friend":['+
+'{"firstname":"Onauma","lastname":"Wanchongkham"},'+
+'{"firstname":"Natthiwut","lastname":"Nuambangkwan"},'+
+'{"firstname":"Weraphat","lastname":"Thampanya"}]}';
+
+const obj = JSON.parse(text);
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName;
+
+</script>
